@@ -28,7 +28,7 @@ stringify({
   house: 123,
   street: 'Main St',
   city: 'Los Angeles',
-  state: 'California',
+  province: 'California',
   country: 'USA'
 }); // => '123 Main St,Los Angeles,CA,US'
 
@@ -36,7 +36,7 @@ parse('123 Main St,Los Angeles,CA,US'); // =>
 // { house: 123,
 //   street: 'Main St',
 //   city: 'Los Angeles',
-//   state: 'CA',
+//   province: 'CA',
 //   country: 'USA'
 // }; 
 

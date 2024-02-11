@@ -8,19 +8,19 @@ test('string representation of the address', () => {
     house: 123,
     street: 'Main St',
     city: 'New York',
-    state: 'NY',
+    province: 'NY',
     country: 'USA'
   }), '123 Main St,New York,NY,US', 'all fields present');
 
   assert.strictEqual(stringify({
     city: 'Los Angeles',
-    state: 'CA',
+    province: 'CA',
     country: 'USA'
   }), ',Los Angeles,CA,US', 'missing house and street fields');
 
   assert.strictEqual(stringify({
     street: 'Elm St',
-    state: 'California'
+    province: 'California'
   }), 'Elm St,,CA,US', 'missing house, city, and country fields');
 
   assert.strictEqual(stringify({
@@ -33,7 +33,7 @@ test('string representation of the address', () => {
     house: 123,
     street: 'Main St',
     city: 'Toronto',
-    state: 'ON',
+    province: 'ON',
     country: 'Canada'
   }), '123 Main St,Toronto,ON,CA', 'canadian address with all fields present');
 
@@ -48,7 +48,7 @@ test('string representation of the address', () => {
     house: 123,
     street: 'Main St',
     city: 'New York',
-    state: 'XX',
+    province: 'XX',
     country: 'USA'
   }), '123 Main St,New York,,US', 'unknown state with country present');
 });
@@ -62,7 +62,7 @@ test('return unknown', () => {
     house: 123,
     street: 'Main St',
     city: 'New York',
-    state: 'XX'
+    province: 'XX'
   }), undefined, 'unknown state and missing country');
 
   assert.strictEqual(stringify({
