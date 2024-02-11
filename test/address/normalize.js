@@ -21,28 +21,48 @@ test('normalize address', () => {
   );
   assert.strictEqual(
     normalize('France'),
-    ',,,FR',
+    'FR',
     'only country'
   );
   assert.strictEqual(
+    normalize('United States'),
+    'US',
+    'only country with known states'
+  );
+  assert.strictEqual(
     normalize('CA'),
-    ',,,CA',
+    'CA',
     'can be country or state'
   );
   assert.strictEqual(
     normalize('NB'),
-    ',,NB,CA',
+    'NB,CA',
     'only state code'
   );
   assert.strictEqual(
     normalize('Ontario'),
-    ',,ON,CA',
+    'ON,CA',
     'only state name'
+  );
+  assert.strictEqual(
+    normalize('California, USA'),
+    'CA,US',
+    'american state'
   );
   assert.strictEqual(
     normalize('123 Main St,New York,NY'),
     '123 Main St,New York,NY,US',
     'missing country'
+  );
+  assert.strictEqual(
+    normalize('Paris, France'),
+    'Paris,,FR',
+    'town and country'
+  );
+  assert.strictEqual(
+    normalize('Via Manzoni 255, Bari, Italy'),
+    'Via Manzoni 255,Bari,,IT',
+    'european address'
   );
   assert.strictEqual(
     normalize('123 Main St, New York, New York, USA'),

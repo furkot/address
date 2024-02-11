@@ -40,9 +40,29 @@ test('prettify address', () => {
     'american address with some fields present'
   );
   assert.strictEqual(
+    prettify('CA,US'),
+    'California, USA',
+    'american address with state only - no leading comma'
+  );
+  assert.strictEqual(
+    prettify('US'),
+    'United States',
+    'american address with country only - no leading commas'
+  );
+  assert.strictEqual(
     prettify('123 Main St,Toronto,ON,CA'),
     '123 Main St, Toronto, ON, Canada',
     'canadian address with all fields present'
+  );
+  assert.strictEqual(
+    prettify(',,ON,CA'),
+    'Ontario, Canada',
+    'canadian address with state and country'
+  );
+  assert.strictEqual(
+    prettify('Mantova,,IT'),
+    'Mantova, Italy',
+    'european address with some fields present'
   );
   assert.strictEqual(
     prettify('10 Rue Tournefort,Paris,,FR'),

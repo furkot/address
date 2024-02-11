@@ -16,7 +16,12 @@ test('string representation of the address', () => {
     town: 'Los Angeles',
     province: 'CA',
     country: 'USA'
-  }), ',Los Angeles,CA,US', 'missing house and street fields');
+  }), 'Los Angeles,CA,US', 'missing house and street fields');
+
+  assert.strictEqual(stringify({
+    province: 'CA',
+    country: 'USA'
+  }), 'CA,US', 'missing house, street, and city fields');
 
   assert.strictEqual(stringify({
     street: 'Elm St',

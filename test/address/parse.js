@@ -30,6 +30,11 @@ test('parse address', () => {
     'missing house and street'
   );
   assert.deepStrictEqual(
+    parse('Paris,,FR'),
+    { town: 'Paris', country: 'France' },
+    'missing house and street - no leading comma'
+  );
+  assert.deepStrictEqual(
     parse('123 Main St,New York,NY,'),
     { house: '123', street: 'Main St', town: 'New York', province: 'NY', country: 'USA' },
     'missing country'
