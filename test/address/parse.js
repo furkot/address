@@ -16,22 +16,22 @@ test('parse address', () => {
   );
   assert.deepStrictEqual(
     parse('123 Main St,New York,NY,US'),
-    { house: '123', street: 'Main St', city: 'New York', province: 'NY', country: 'USA' },
+    { house: '123', street: 'Main St', town: 'New York', province: 'NY', country: 'USA' },
     'all fields present'
   );
   assert.deepStrictEqual(
     parse('123A Main St,,NY,US'),
     { house: '123A', street: 'Main St', province: 'NY', country: 'USA' },
-    'missing city'
+    'missing town'
   );
   assert.deepStrictEqual(
     parse(',Paris,,FR'),
-    { city: 'Paris', country: 'France' },
+    { town: 'Paris', country: 'France' },
     'missing house and street'
   );
   assert.deepStrictEqual(
     parse('123 Main St,New York,NY,'),
-    { house: '123', street: 'Main St', city: 'New York', province: 'NY', country: 'USA' },
+    { house: '123', street: 'Main St', town: 'New York', province: 'NY', country: 'USA' },
     'missing country'
   );
 });
