@@ -74,4 +74,14 @@ test('normalize address', () => {
     '123 Main St,New York,NY,US',
     'already normalized'
   );
+  assert.strictEqual(
+    normalize('819 Failing Dr, Enid, OK 73701, USA'),
+    '819 Failing Dr,Enid,OK,US',
+    'us address with zip and country'
+  );
+  assert.strictEqual(
+    normalize('US-183, Elm Creek, NE 68836-9763'),
+    'US-183,Elm Creek,NE,US',
+    'us address with zip'
+  );
 });
