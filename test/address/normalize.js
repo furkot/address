@@ -31,7 +31,7 @@ test('normalize address', () => {
   );
   assert.strictEqual(
     normalize('CA'),
-    'CA',
+    'CA,US',
     'can be country or state'
   );
   assert.strictEqual(
@@ -53,6 +53,11 @@ test('normalize address', () => {
     normalize('123 Main St,New York,NY'),
     '123 Main St,New York,NY,US',
     'missing country'
+  );
+  assert.strictEqual(
+    normalize('Off I-93, Boston, MA'),
+    'Off I-93,Boston,MA,US',
+    'prefer state'
   );
   assert.strictEqual(
     normalize('Paris, France'),
