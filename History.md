@@ -1,4 +1,9 @@
 
+0.0.4 / 2024-02-22
+==================
+
+ * if in doubt treat the last part as state rather than country when normalizing address
+
 0.0.3 / 2024-02-18
 ==================
 
