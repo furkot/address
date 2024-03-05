@@ -39,4 +39,9 @@ test('parse address', () => {
     { house: '123', street: 'Main St', town: 'New York', province: 'NY', country: 'USA' },
     'missing country'
   );
+  assert.deepStrictEqual(
+    parse('51b Alkotás utca,Budapeszt,Budapeszt,Węgry'),
+    { house: '51b', street: 'Alkotás utca', town: 'Budapeszt', province: 'Budapeszt', country: 'Węgry' },
+    'address in polish'
+  );
 });

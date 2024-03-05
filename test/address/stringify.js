@@ -48,31 +48,44 @@ test('string representation of the address', () => {
     town: 'Paris',
     country: 'France'
   }), '10 Rue Tournefort,Paris,,FR', 'european address without state');
-
-  assert.strictEqual(stringify({
-    house: 123,
-    street: 'Main St',
-    town: 'New York',
-    province: 'XX',
-    country: 'USA'
-  }), '123 Main St,New York,,US', 'unknown state with country present');
 });
 
-test('return unknown', () => {
+test('parts unknown', () => {
   assert.strictEqual(stringify(), undefined, 'undefined address');
 
-  assert.strictEqual(stringify({}), undefined, 'empty object');
+  assert.strictEqual(stringify({}), '', 'empty object');
 
   assert.strictEqual(stringify({
     house: 123,
     street: 'Main St',
-    town: 'New York',
-    province: 'XX'
-  }), undefined, 'unknown state and missing country');
+    town: 'Fort Bragg',
+    province: 'Kalifornia'
+  }), '123 Main St,Fort Bragg,Kalifornia,', 'unknown state and missing country');
+
+  assert.strictEqual(stringify({
+    house: 123,
+    street: 'Main St',
+    town: 'Fort Bragg',
+    province: 'Kalifornia',
+    country: 'Stany Zjednoczone'
+  }), '123 Main St,Fort Bragg,Kalifornia,Stany Zjednoczone', 'unknown state with country present');
+
+  assert.strictEqual(stringify({
+    house: 123,
+    street: 'Main St',
+    town: 'Fort Bragg',
+    province: 'Kalifornia',
+    country: 'Stany Zjednoczone'
+  }), '123 Main St,Fort Bragg,Kalifornia,Stany Zjednoczone', 'unknown state with country present');
 
   assert.strictEqual(stringify({
     house: 123,
     street: 'Main St',
     town: 'New York'
-  }), undefined, 'missing state and country');
+  }), '123 Main St,New York,,', 'missing state and country');
+
+  assert.strictEqual(stringify({
+    town: 'Budapeszt',
+    country: 'Węgry'
+  }), 'Budapeszt,,Węgry', 'unrecognized country');
 });

@@ -22,7 +22,7 @@ test('prettify address', () => {
   assert.strictEqual(
     prettify('123 Main St,New York,NY'),
     '123 Main St, New York, NY',
-    'missing parts'
+    'state in country position'
   );
   assert.strictEqual(
     prettify('123 Main St, New York, NY'),
@@ -79,5 +79,34 @@ test('prettify address', () => {
     '41 Via Niccolo\' Tommaso D\'Aquino, Taranto, Italy',
     'european address with city that is state'
   );
+  assert.strictEqual(
+    prettify('51b Alkotás utca,Budapeszt,Budapeszt,Węgry'),
+    '51b Alkotás utca, Budapeszt, Węgry',
+    'address in polish'
+  );
+  assert.strictEqual(
+    prettify('Via Lugo 182,Faenza,,Italia'),
+    'Via Lugo 182, Faenza, Italia',
+    'partial address in italian'
+  );
+  assert.strictEqual(
+    prettify('Budapeszt,,Węgry'),
+    'Budapeszt, Węgry',
+    'partial address in polish'
+  );
+  assert.strictEqual(
+    prettify('Budapeszt,'),
+    'Budapeszt',
+    'only city'
+  );
+  assert.strictEqual(
+    prettify('Via Lugo 182,Faenza,,'),
+    'Via Lugo 182, Faenza',
+    'only street and city'
+  );
+  assert.strictEqual(
+    prettify('123 Main St,,NY,'),
+    '123 Main St, NY',
+    'only street and state'
+  );
 });
-
