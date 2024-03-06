@@ -1,4 +1,9 @@
 
+0.0.5 / 2024-03-06
+==================
+
+ * handle addresses with unknown country or missing parts
+
 0.0.4 / 2024-02-22
 ==================
 
