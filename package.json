@@ -9,7 +9,10 @@
     "email": "melitele@furkot.com",
     "url": "https://melitele.me"
   },
-  "repository": "furkot/address",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkot/address.git"
+  },
   "license": "MIT",
   "keywords": [
     "furkot"

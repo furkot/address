@@ -49,11 +49,11 @@ prettify('1 Via Toselli,Taranto,Taranto,IT'); // => '1 Via Toselli, Taranto, Ita
 
 MIT © [Natalia Kowalczyk](https://melitele.me)
 
-[npm-image]: https://img.shields.io/npm/v/@furkot/address.svg
+[npm-image]: https://img.shields.io/npm/v/@furkot/address
 [npm-url]: https://npmjs.org/package/@furkot/address
 
 [build-url]: https://github.com/furkot/address/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/furkot/address/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/furkot/address/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/@furkot/address
 [deps-url]: https://libraries.io/npm/@furkot%2Faddress
