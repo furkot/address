@@ -1,4 +1,13 @@
 
+1.0.0 / 2025-09-14
+==================
+
+ * fix build badge in README
+ * use `Object.fromEntries` to construct new objects
+ * remove unused `str2obj` util
+ * migrate to ESM format
+ * use `biome` as a linter and formatter
+
 0.0.5 / 2024-03-06
 ==================
 

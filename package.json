@@ -1,6 +1,6 @@
 {
   "name": "@furkot/address",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Furkot address normalizer.",
   "type": "module",
   "exports": "./index.js",
