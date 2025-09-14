@@ -2,20 +2,23 @@
   "name": "@furkot/address",
   "version": "0.0.5",
   "description": "Furkot address normalizer.",
+  "type": "module",
+  "exports": "./index.js",
   "author": {
     "name": "Natalia Kowalczyk",
     "email": "melitele@furkot.com",
     "url": "https://melitele.me"
   },
-  "repository": "furkot/address",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkot/address.git"
+  },
   "license": "MIT",
   "keywords": [
     "furkot"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "jshint": "~2",
-    "tape": "~5"
+  "dependencies": {
+    "@biomejs/biome": "2.2.4"
   },
   "scripts": {
     "test": "make check"
