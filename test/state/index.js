@@ -1,7 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-
-const { abbr2state, country2states, state2abbr, state2country } = require('../../lib/state');
+import assert from 'node:assert';
+import test from 'node:test';
+import { abbr2state, country2states, state2abbr, state2country } from '../../lib/state/index.js';
 
 test('state name to abbreviation', () => {
   assert.strictEqual(state2abbr['California'], 'CA');

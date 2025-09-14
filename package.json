@@ -2,6 +2,8 @@
   "name": "@furkot/address",
   "version": "0.0.5",
   "description": "Furkot address normalizer.",
+  "type": "module",
+  "exports": "./index.js",
   "author": {
     "name": "Natalia Kowalczyk",
     "email": "melitele@furkot.com",

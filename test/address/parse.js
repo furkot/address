@@ -1,7 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-
-const parse = require('../../lib/address/parse');
+import assert from 'node:assert';
+import test from 'node:test';
+import { parse } from '../../index.js';
 
 test('parse address', () => {
   assert.deepStrictEqual(parse(), undefined, 'undefined address');

@@ -1,7 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-
-const normalize = require('../../lib/address/normalize');
+import assert from 'node:assert';
+import test from 'node:test';
+import { normalize } from '../../index.js';
 
 test('normalize address', () => {
   assert.strictEqual(normalize(), undefined, 'undefined address');

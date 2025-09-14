@@ -1,7 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-
-const stringify = require('../../lib/address/stringify');
+import assert from 'node:assert';
+import test from 'node:test';
+import { stringify } from '../../index.js';
 
 test('string representation of the address', () => {
   assert.strictEqual(

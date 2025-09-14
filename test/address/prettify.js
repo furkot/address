@@ -1,7 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-
-const prettify = require('../../lib/address/prettify');
+import assert from 'node:assert';
+import test from 'node:test';
+import { prettify } from '../../index.js';
 
 test('prettify address', () => {
   assert.strictEqual(prettify(), '', 'undefined address');
