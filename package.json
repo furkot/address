@@ -17,7 +17,7 @@
   "keywords": [
     "furkot"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@biomejs/biome": "2.2.4"
   },
   "scripts": {
