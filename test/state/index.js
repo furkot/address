@@ -1,12 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert');
 
-const {
-  abbr2state,
-  country2states,
-  state2abbr,
-  state2country
-} = require('../../lib/state');
+const { abbr2state, country2states, state2abbr, state2country } = require('../../lib/state');
 
 test('state name to abbreviation', () => {
   assert.strictEqual(state2abbr['California'], 'CA');

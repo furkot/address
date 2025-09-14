@@ -12,10 +12,8 @@
   "keywords": [
     "furkot"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "jshint": "~2",
-    "tape": "~5"
+  "dependencies": {
+    "@biomejs/biome": "2.2.4"
   },
   "scripts": {
     "test": "make check"
